@@ -1,4 +1,4 @@
-# summer-school-2017's starter kti
+# summer-school-2017's starter kit
 
 To start:
 
@@ -28,3 +28,10 @@ To lint you code:
 ```bash
 $ npm run lint
 ```
+
+
+### add button does not work
+to be added:
+1. delete food button
+2. calendar component --selector for the day to show recorded stats for
+3. total component --consolidated stats for all food throughout the day
