@@ -79,6 +79,7 @@ const state = {
 
 const mutations = {
       removeFood(state, payload) {
+           //still needs to be added and fixed :D
             state.userIntakeList[payload.intake.indexOf].foods.splice(state.userIntakeList[payload.intake.indexOf].foods.indexOf(payload.food),1);
       },
       addMockFood(state, intake) { 
