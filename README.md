@@ -1,4 +1,4 @@
-# summer-school-2017's starter kti
+# summer-school-2017's starter kit
 
 To start:
 
