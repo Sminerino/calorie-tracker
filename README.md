@@ -31,6 +31,7 @@ $ npm run lint
 
 
 to be added:
+0. proper adding 
 1. delete food button
 2. calendar component --selector for the day to show recorded stats for
 3. total component --consolidated stats for all food throughout the day
