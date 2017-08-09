@@ -32,6 +32,6 @@ $ npm run lint
 
 add button does not work
 to be added:
-  delete food button
-  calendar component --selector for the day to show recorded stats for
-  total component --consolidated stats for all food throughout the day
+-delete food button
+-calendar component --selector for the day to show recorded stats for
+-total component --consolidated stats for all food throughout the day
