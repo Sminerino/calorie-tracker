@@ -18,10 +18,12 @@ const app = new Vue({
                   <div class='app__container'>
                         <div class='app__header'>whatever</div>
                         <div class='app__body'>
-                              <workspace></workspace>
+                              <workspace class='app__workspace'></workspace>
                               <div class='app__sidebar'>
-                                    <calendar></calendar>
-                                    <total></total>
+                                    {/* <calendar class='app__calendar'></calendar> */}
+                                    <div class='calendar-temp'></div>
+                                    {/* <total class='app__total'></total> */}
+                                    <div class='total-temp'></div>
                               </div>
                         </div>
                   </div>

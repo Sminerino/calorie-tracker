@@ -16,7 +16,7 @@ const state = {
 
                         },
                         {
-                              title: 'Oats',
+                              title: 'Oatskies',
                               weight: 110,
                               calories: 330,
                               carb: 66,
@@ -101,3 +101,5 @@ const store = new Vuex.Store({
       mutations,
 
 });
+
+export default store;
