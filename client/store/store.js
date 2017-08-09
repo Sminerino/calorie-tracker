@@ -82,7 +82,7 @@ const mutations = {
             state.userIntakeList[payload.intake.indexOf].foods.splice(state.userIntakeList[payload.intake.indexOf].foods.indexOf(payload.food),1);
       },
       addMockFood(state, intake) { 
-            state.userIntakeList[intake.indexOf].foods.push(
+             state.userIntakeList[state.userIntakeList.indexOf(intake)].foods.push(
                   {
                               title: 'Oats',
                               weight: 110,
@@ -91,7 +91,7 @@ const mutations = {
                               prot: 11,
                               fats: 2,
 
-                  });
+                  }); 
       },
       
 };

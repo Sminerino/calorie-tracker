@@ -34,8 +34,8 @@
                         </div>
                   </div>
 
-                  <div class='intake__add-button-container'>
-                        <div class='intake__add-button' @click='addMockFood(intake)'>+</div>
+                  <div class='intake__add-button-container' @click='addMockFood(intake)'>
+                        <div class='intake__add-button'>+</div>
                   </div>
 
           </div>
