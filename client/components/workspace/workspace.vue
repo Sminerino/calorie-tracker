@@ -1,5 +1,5 @@
 <template>
-<div class='container'>
+<div class='workspace-container'>
       <div class='intake intake_type_breakfast' v-for='intake in getUserIntakeList'>
             <p class='intake__title'>{{ intake.title }}</p>
             <div class='intake__food-tiles-container'>
@@ -55,10 +55,16 @@
             methods: {
                   addMockFood: function (intake) {
                               this.$store.commit('addMockFood', intake);
-                        },
+                  },
                   removeFood: function (intake, food) {
                               this.$store.commit('removeFood', { intake_:intake, food_:food, });
-                        }
+                  },
+                  findFood: function(value) {
+                              this.$store.dispatch('findFood',value).then((res) => {
+                                    this.foundFood=res;
+                              });
+                  },
+                  
             }
       }
 </script>

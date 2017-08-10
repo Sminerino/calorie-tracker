@@ -14,7 +14,7 @@ $font-info: Regular 18pt Muli;
     height: 100%;
     width: 100%; */
 //}
-.container{
+.workspace-container{
     display: flex;
     flex-grow: 1;
     flex-basis: 0;
@@ -117,6 +117,7 @@ $font-info: Regular 18pt Muli;
         background-color: $text-color-light;
         font-style: bold;
         border-radius: 1000px;
+        cursor: pointer;
         width: 50px;
         height: 50px;
         display: flex;

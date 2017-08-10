@@ -83,7 +83,7 @@ const mutations = {
             .foods.splice(state.userIntakeList[state.userIntakeList.indexOf(payload.intake_)]
             .foods.indexOf(payload.food_),1); 
       },
-      addMockFood(state, intake) { 
+      addMockFood(state, intake) {
             state.userIntakeList[state.userIntakeList.indexOf(intake)].foods.push(
                   {
                               title: 'Oats',
