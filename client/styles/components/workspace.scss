@@ -135,13 +135,26 @@ $font-info: Regular 18pt Muli;
     padding: 20px 3px 20px 3px;
     border-bottom: 1px solid #a0a0a0;
 
+    &:hover {
+        & .food-tile__remove-button {
+            visibility: visible;
+        }
+    }
+    
+    &__remove-button {
+        visibility: hidden;
+        position: relative;
+        flex-grow:1;
+        color: red;
+    }
+
     &_last {
         border: transparent;
     }
 
     &__title {
         display: flex;
-        flex-grow: 2;
+        flex-grow: 1;
         flex-basis: 0;
     }
 
