@@ -31,6 +31,7 @@ $ npm run lint
 
 
 to be added:
-1. delete food button
-2. calendar component --selector for the day to show recorded stats for
-3. total component --consolidated stats for all food throughout the day
+1. proper adding --allowing user to choose from db of foods and set their own weight to the chosen item
+2. delete food button
+3. calendar component --selector for the day to show recorded stats for
+4. total component --consolidated stats for all food throughout the day
