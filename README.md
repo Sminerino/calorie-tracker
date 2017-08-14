@@ -31,7 +31,6 @@ $ npm run lint
 
 
 to be added:
-1. proper adding --allowing user to choose from db of foods and set their own weight to the chosen item
-
+1. server stuff
 2. calendar component --selector for the day to show recorded stats for
 3. total component --consolidated stats for all food throughout the day
