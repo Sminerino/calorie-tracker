@@ -1,5 +1,5 @@
 {
-  "name": "summer-school-2017",
+  "name": "calorie-tracker",
   "version": "0.1.0",
   "description": "Summer School 2017 Weather Application",
   "main": "client/index.js",
@@ -79,5 +79,16 @@
     "webpack": "2.2.0",
     "webpack-dev-middleware": "^1.8.1",
     "webpack-hot-middleware": "^2.12.2"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sminerino/calorie-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sminerino/calorie-tracker/issues"
+  },
+  "homepage": "https://github.com/Sminerino/calorie-tracker#readme"
 }

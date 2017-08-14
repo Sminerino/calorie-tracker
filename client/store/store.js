@@ -2,10 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+
 const state = {
       userIntakeList: [
             { 
                   title: 'Breakfast',
+                  searchEnabled:false,
                   foods: [{
                               title: 'Milk',
                               weight: 530,
@@ -29,6 +31,7 @@ const state = {
             },
             {
                   title: 'Lunch',
+                searchEnabled:false,
                   foods: [{
                               title: 'Milk',
                               weight: 530,
@@ -52,6 +55,7 @@ const state = {
             },
             {
                   title: 'Dinner',
+                searchEnabled:false,
                   foods: [{
                               title: 'Milk',
                               weight: 530,
@@ -74,7 +78,8 @@ const state = {
                   ]
             },
 
-      ]
+      ],
+
 };
 
 const mutations = {
@@ -83,20 +88,18 @@ const mutations = {
             .foods.splice(state.userIntakeList[state.userIntakeList.indexOf(payload.intake_)]
             .foods.indexOf(payload.food_),1); 
       },
-      addMockFood(state, intake) {
-            state.userIntakeList[state.userIntakeList.indexOf(intake)].foods.push(
-                  {
-                              title: 'Oats',
-                              weight: 110,
-                              calories: 330,
-                              carb: 66,
-                              prot: 11,
-                              fats: 2,
 
-                  }); 
-      },
+      addFood(state, payload) {
+          state.userIntakeList[payload._intakeIndex].foods.push(...payload._addList);
+          state.userIntakeList[payload._intakeIndex].searchEnabled=false;
+      }
       
 };
+const actions = {
+    findFood({state}, value) {
+
+    }
+}
 
 const store = new Vuex.Store({
       state,
