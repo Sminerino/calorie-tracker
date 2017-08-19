@@ -1,0 +1,55 @@
+$text-color-light: #8262A6;
+$text-color-dark: #4A395D;
+$bg-color: #DBDBDB;
+$intake-bg-color: #E5E5E5;
+$button-color: #C4C4C4;
+$border-color: #A0A0A0;
+$font-header: Regular 12pt Muli;
+$font-info: Regular 18pt Muli;
+
+
+.total {
+  &-component {
+    background-color: $bg-color;
+    width: auto;
+    display: flex;
+    flex-flow:column;
+    justify-content: space-between;
+
+  }
+  &-container {
+    padding: 0px 25px 25px 25px;
+    font: $font-header;
+    color: $text-color-dark;
+  }
+  &-title {
+    padding-top:5px;
+    align-self:center;
+    font: bold 16pt Muli;
+    color: $text-color-light;
+    font-weight: 900;
+  }
+
+}
+.carbs-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 0px;
+}
+.prots-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 0px;
+}
+.fats-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 0px;
+}
+.calories-container {
+  border-top: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 0px;
+  font: 14pt bold Muli;
+}

@@ -1,14 +1,14 @@
 <template>
       <div class='app__container'>
-            <div class='app__header'>whatever</div>
+            <div class='app__header'>Very beautiful and sophisticated title</div>
 
             <div class='app__body'>
 
                   <div class='workspace-container'>
-                        <div class='intake intake_type_breakfast' v-for='intake in getUserIntakeList'>
+                        <div class='intake intake_type_breakfast' v-for='intake in getIntakeList'>
                               <p class='intake__title'>{{ intake.title }}</p>
                               <div class='intake__food-tiles-container'>
-                                    <div class='intake__column-headers' v-if='intake.foods.length>0'>
+                                    <div class='intake__column-headers' v-if='intake.food.length>0'>
                                           <div class='intake__title-filler'></div>
                                           <div class = 'intake__amount-headers'>
                                                 <p class='intake__column intake__column_type_weight'>g</p>
@@ -20,10 +20,10 @@
                                                 <div class='intake__column intake__column_type_fats'>Fats</div>
                                           </div>
                                     </div>
-                                    <div class='food-tile' v-for='food in intake.foods' :class=" { 'food-tile_last':intake.foods[intake.foods.length-1]===food } " >
+                                    <div class='food-tile' v-for='food in intake.food' :class=" { 'food-tile_last':intake.food[intake.food.length-1]===food } " >
                                           <div class='food-tile__title'>{{ food.title }}
                                           </div>
-                                          <div class='food-tile__remove-button' @click='removeFood(intake, food)'>x</div>
+                                          <div class='food-tile__remove-button' @click='removeFood(food)'>x</div>
                                           <div class='food-tile__amount'>
                                                 <div class='food-tile__weight'>{{ food.weight }}
                                                 </div>
@@ -31,9 +31,9 @@
                                                 </div>
                                           </div>
                                           <div class='food-tile__composition'>
-                                                <div class='food-tile__carb'>{{ Math.round(food.carb/100*food.weight) }}
+                                                <div class='food-tile__carb'>{{ Math.round(food.carbs/100*food.weight) }}
                                                 </div>
-                                                <div class='food-tile__prot'>{{ Math.round(food.prot/100*food.weight) }}
+                                                <div class='food-tile__prot'>{{ Math.round(food.prots/100*food.weight) }}
                                                 </div>
                                                 <div class='food-tile__fats'>{{ Math.round(food.fats/100*food.weight) }}
                                                 </div>
@@ -44,15 +44,16 @@
                                           <div class='intake__add-button'>+</div>
                                     </div>
 
-                                    <div class="search-outer" v-bind:class="{ 'search-outer_disabled': !intake.searchEnabled}"><search :intakeIndex="getUserIntakeList.indexOf(intake)"></search></div>
+                                    <div class="search-outer" v-bind:class="{ 'search-outer_disabled': !intake.searchEnabled}"><search :intakeID="getIntakeList.indexOf(intake)"></search></div>
 
                               </div>
 
                         </div>
+
                   </div>
                   <div class='app__sidebar'>
                         <div class='calendar-temp'></div>
-                        <div class='total-temp'></div>
+                        <total></total>
                   </div>
 
             </div>
@@ -60,33 +61,39 @@
 </template>
 
 <script>
+      import axios from 'axios';
       import search from '../search/search';
+      import total from '../total/total';
+
       export default {
             computed: {
-                  getUserIntakeList: function(){
-                        return this.$store.state.userIntakeList;
+                  getIntakeList: function(){
+                       return this.$store.state.userIntakeList;
                   },
                   
             },
+            mounted: function() {
+                this.$store.dispatch('getUserIntakeList');
+                this.$store.dispatch('getUserFoodList');
+
+            },
             methods: {
-                  addMockFood: function (intake) {
-                              this.$store.commit('addMockFood', intake);
-                  },
-                  removeFood: function (intake, food) {
-                              this.$store.commit('removeFood', { intake_:intake, food_:food, });
+                  removeFood: function (food) {
+                      this.$store.commit('removeFood', food);
                   },
                   toggleSearch: function (intake) {
-                      if (intake.searchEnabled == false)
-                          intake.searchEnabled = true;
-                      else intake.searchEnabled = false;
+                      this.getIntakeList.forEach((element, ...rest) => { this.$set(element,'searchEnabled',false) })
+                     if (!intake.searchEnabled)
+                          intake.searchEnabled = true;//this property is created after the mounting so we need to update component when it's present
+                     else intake.searchEnabled = false;
                   },
+
 
             },
             components: {
-                'search': search
+                'search': search,
+                'total': total
             },
-          data: {
-                kik: true
-          }
+
       }
 </script>

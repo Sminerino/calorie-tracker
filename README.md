@@ -1,5 +1,3 @@
-# summer-school-2017's starter kit
-
 To start:
 
 ```bash
@@ -8,7 +6,7 @@ $ npm install
 
 ```bash
 $ npm install -g json-server
-$ json-server —watch cities.json
+$ json-server —watch userData.json //simultaneously with the npm run 
 ```
 
 To develop:
@@ -29,8 +27,7 @@ To lint you code:
 $ npm run lint
 ```
 
-
 to be added:
-1. server stuff
-2. calendar component --selector for the day to show recorded stats for
-3. total component --consolidated stats for all food throughout the day
+1. calendar component --selector for the day to show recorded stats for
+
+

@@ -1,14 +1,24 @@
 @import './components/workspace.scss';
 @import './components/search.scss';
+@import './components/total.scss';
 
 body {
       margin: 0;
+      background-color: #c4c4c4;
 }
 .app {
       &__container {
             display: flex;
             flex-flow: column;
-            background-color: #c4c4c4;
+            max-width: 1500px;
+            margin-left: auto;
+            margin-right: auto;
+      }
+      &__header {
+            display: flex;
+            justify-content: center;
+            font: bold 22pt Muli;
+            color: #8262A6;
       }
       
       &__body {
@@ -19,10 +29,12 @@ body {
             flex-grow: 0.5;
             margin: 30px;
             margin-left: 0px;
+            flex-shrink:4;
       }
 
       &__workspace {
             margin: 30px;
+            flex-shrink:1;
       }
 
 }

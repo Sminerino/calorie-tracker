@@ -1,0 +1,20 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "title": "Milk",
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "title": "Oats",
+      "calories": "330",
+      "carbs": "66",
+      "prots": "11",
+      "fats": "3",
+      "id": 2
+    }
+  ]
+}

@@ -28,7 +28,6 @@ $font-info: Regular 18pt Muli;
     font: $font-info;
     color: $text-color-light;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
     padding: 15px 15px;
     display: flex;
     font-size: 16px;
@@ -38,6 +37,7 @@ $font-info: Regular 18pt Muli;
     display: flex;
     font: $font-info;
     color: $text-color-dark;
+    flex-direction: column;
   }
   &__done-button-container {
     display: flex;
@@ -45,15 +45,31 @@ $font-info: Regular 18pt Muli;
     padding: 10px;
   }
   &__done-button {
-    background-color: darkolivegreen;
+    padding: 5px 10px 5px 18px;
+    background-color: $button-color;
+    border-radius: 5px;
+    &:hover {
+      background-color: $border-color;
+    }
+    flex-basis: 40px;
   }
 }
 
 .found-food {
   display:flex;
-  width: 100%;
-
+  justify-content: space-between;
+  align-self:stretch;
+  margin: 2px;
+  padding:8px;
+  background-color: $intake-bg-color;
+  &__calories-wrapper {
+    display:flex;
+  }
+  &__title-wrapper {
+    display:flex;
+  }
   &__weight-input {
     width: 50px;
+    margin-right:5px;
   }
 }

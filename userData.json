@@ -1,0 +1,89 @@
+{
+  "intake": [
+    {
+      "title": "Breakfast",
+      "id": 1,
+      "food": []
+    },
+    {
+      "title": "Lunch",
+      "id": 2,
+      "food": []
+    },
+    {
+      "title": "Dinner",
+      "id": 3,
+      "food": []
+    }
+  ],
+  "userFoods": [
+    {
+      "id": 1,
+      "title": "Milk",
+      "intakeID": 1,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "title": "Milk",
+      "intakeID": 1,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 2
+    },
+    {
+      "title": "Milk",
+      "intakeID": 2,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 7
+    }
+  ],
+  "food": [
+    {
+      "id": 1,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 2,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 3,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 4,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    }
+  ]
+}
