@@ -46,6 +46,56 @@
       "prots": 3,
       "fats": 3,
       "id": 7
+    },
+    {
+      "title": "Milk",
+      "intakeID": 2,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 8
+    },
+    {
+      "title": "Milk",
+      "intakeID": 2,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 9
+    },
+    {
+      "title": "Milk",
+      "intakeID": 1,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 10
+    },
+    {
+      "title": "Milk",
+      "intakeID": 1,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 11
+    },
+    {
+      "title": "Milk",
+      "intakeID": 1,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "id": 12
     }
   ],
   "food": [

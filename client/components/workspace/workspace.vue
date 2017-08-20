@@ -1,6 +1,6 @@
 <template>
       <div class='app__container'>
-            <div class='app__header'>Very beautiful and sophisticated title</div>
+            <div class='app__header'>Beautiful and sophisticated title</div>
 
             <div class='app__body'>
 
@@ -52,7 +52,7 @@
 
                   </div>
                   <div class='app__sidebar'>
-                        <div class='calendar-temp'></div>
+                        <calendar></calendar>
                         <total></total>
                   </div>
 
@@ -64,6 +64,7 @@
       import axios from 'axios';
       import search from '../search/search';
       import total from '../total/total';
+      import calendar from '../calendar/calendar';
 
       export default {
             computed: {
@@ -82,9 +83,9 @@
                       this.$store.commit('removeFood', food);
                   },
                   toggleSearch: function (intake) {
-                      this.getIntakeList.forEach((element, ...rest) => { this.$set(element,'searchEnabled',false) })
+                      this.getIntakeList.forEach((element, ...rest) => { this.$set(element,'searchEnabled',false) }) //this property is created after the mounting so we need to update component when it's present
                      if (!intake.searchEnabled)
-                          intake.searchEnabled = true;//this property is created after the mounting so we need to update component when it's present
+                          intake.searchEnabled = true;
                      else intake.searchEnabled = false;
                   },
 
@@ -92,7 +93,8 @@
             },
             components: {
                 'search': search,
-                'total': total
+                'total': total,
+                'calendar': calendar
             },
 
       }

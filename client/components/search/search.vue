@@ -44,17 +44,18 @@
                   },
                   addFood: function() {
                         this.$store.dispatch('addFood', { _intakeID:this.intakeID, _addList:this.checkedList });
-
+                        this.checkedList=[];
+                        this.$store.state.currentSearch=[];
                   },
 
 
             },
            data: function() {
-               return ({
+               return {
                    checkedList: [],
                    foundFood: [],
 
-               });
+               };
            }
 
       }

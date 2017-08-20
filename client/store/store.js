@@ -8,7 +8,7 @@ const state = {
       userIntakeList: [], //id, title
       userFoodList: [], //id, title, calories, carbs, prots, fatgs, weight, intakeID
       currentSearch: [], //id, title, calories, carbs, prots, fats, weight
-
+      currentDate: Date(),
 
       userIntakeListIdDictionary: [],
 

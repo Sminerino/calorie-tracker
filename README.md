@@ -30,4 +30,4 @@ $ npm run lint
 to be added:
 1. calendar component --selector for the day to show recorded stats for
 
-
+calendar component is ready (with bug: not going 2 or more months back) but no date changing in the app itself yet

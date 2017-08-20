@@ -1,0 +1,58 @@
+$text-color-light: #8262A6;
+$text-color-dark: #4A395D;
+$bg-color: #DBDBDB;
+$intake-bg-color: #E5E5E5;
+$button-color: #C4C4C4;
+$border-color: #A0A0A0;
+$font-header: Regular 12pt Muli;
+$font-info: Regular 18pt Muli;
+
+.calendar {
+
+  &__container{
+    background-color: $bg-color;
+    margin-bottom:30px;
+  }
+  &__header {
+    display:flex;
+    justify-content:space-between;
+    font:$font-info;
+    font-weight:900;
+    color: $text-color-light;
+    font-size:16pt;
+  }
+  &__title {
+
+
+  }
+  &__month-change-button {
+    display:flex;
+    align-items: center;
+    padding:0px 15px 0px 15px;
+  }
+  &__cell {
+    width:20%;
+    flex-basis: 18px;
+    flex-shrink:0;
+    margin:0px 10px 3px 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    &_past {
+      color: #4A395D;
+    }
+    &_current {
+      background-color: $intake-bg-color;
+      border-radius:50px;
+      font-weight:900;
+    }
+  }
+  &__tiles-container {
+    font: $font-header;
+    color: #8262A6;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    height:217px;
+  }
+}

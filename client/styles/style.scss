@@ -1,6 +1,7 @@
 @import './components/workspace.scss';
 @import './components/search.scss';
 @import './components/total.scss';
+@import './components/calendar.scss';
 
 body {
       margin: 0;
@@ -30,6 +31,7 @@ body {
             margin: 30px;
             margin-left: 0px;
             flex-shrink:4;
+            max-width:280px;
       }
 
       &__workspace {

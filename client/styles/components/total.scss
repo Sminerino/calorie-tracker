@@ -18,12 +18,12 @@ $font-info: Regular 18pt Muli;
 
   }
   &-container {
-    padding: 0px 25px 25px 25px;
+    padding: 0px 25px 15px 25px;
     font: $font-header;
     color: $text-color-dark;
+
   }
   &-title {
-    padding-top:5px;
     align-self:center;
     font: bold 16pt Muli;
     color: $text-color-light;
