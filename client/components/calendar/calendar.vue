@@ -27,6 +27,7 @@
 
             }
         },
+        props:['initialDate'],
         computed: {
             getNumberOfRows: function() {
                 return Math.ceil(this.getNumberOfDays/this.numberOfColumns);
@@ -108,8 +109,8 @@
 
         },
         mounted: function() {
-
-            this.createRowsColumnsArray();
+            this.createRowsColumnsArray()
+            this.setCurrentDate(this.cells[this.currentDate.getDate()-1]);
         },
 
     }

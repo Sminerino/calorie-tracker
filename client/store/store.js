@@ -88,6 +88,9 @@ const mutations = {
           }
           _addList.forEach(addToUserFoodList);
           state.userIntakeList[_intakeID].searchEnabled=false;
+      },
+      changeDate(state, date) {
+          state.currentDate=date;
       }
       
 };
@@ -97,7 +100,8 @@ const actions = {
             then((res) => { commit('setUserIntakeList', res.data); });
     },
     getUserFoodList( {commit} ) {
-        axios.get('http://localhost:3000/userFoods').
+        let date=new Date(state.currentDate);
+        axios.get('http://localhost:3000/userFoods?date='+parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())).
             then((res) => { commit('setUserFoodList', res.data); });
     },
     findFood({commit}, value ) {
@@ -107,8 +111,13 @@ const actions = {
     },
     addFood({commit}, {_intakeID, _addList } ) {
         commit('addFoodToList', {_intakeID, _addList});
+        let date=new Date(state.currentDate);
         function axPostToFile(item) {
-            axios.post('http://localhost:3000/userFoods', {title:item.title, intakeID:item.intakeID, weight:item.weight, calories:item.calories, carbs:item.carbs, prots:item.prots, fats:item.fats});
+            axios.post('http://localhost:3000/userFoods', {
+                title:item.title, intakeID:item.intakeID, weight:item.weight,
+                calories:item.calories, carbs:item.carbs, prots:item.prots,
+                fats:item.fats, date:parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())
+            });
         }
         _addList.forEach(axPostToFile);
     },

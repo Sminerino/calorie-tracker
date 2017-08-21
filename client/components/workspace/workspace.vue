@@ -52,7 +52,9 @@
 
                   </div>
                   <div class='app__sidebar'>
-                        <calendar></calendar>
+                        <calendar
+                                @dateChanged="changeDate"
+                        ></calendar>
                         <total></total>
                   </div>
 
@@ -74,8 +76,9 @@
                   
             },
             mounted: function() {
-                this.$store.dispatch('getUserIntakeList');
-                this.$store.dispatch('getUserFoodList');
+                //this.$store.dispatch('getUserIntakeList');
+                //this.$store.dispatch('getUserFoodList');
+                //we initalize process with calendar mount so no mount stuff needed
 
             },
             methods: {
@@ -88,8 +91,11 @@
                           intake.searchEnabled = true;
                      else intake.searchEnabled = false;
                   },
-
-
+                  changeDate: function(date) {
+                      this.$store.commit('changeDate', date);
+                      this.$store.dispatch('getUserIntakeList');
+                      this.$store.dispatch('getUserFoodList');
+                  }
             },
             components: {
                 'search': search,
