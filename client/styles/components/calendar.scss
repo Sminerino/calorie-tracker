@@ -15,7 +15,8 @@ $font-info: Regular 18pt Muli;
   }
   &__header {
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
+    align-items: center;
     font:$font-info;
     font-weight:900;
     color: $text-color-light;
@@ -28,23 +29,40 @@ $font-info: Regular 18pt Muli;
   &__month-change-button {
     display:flex;
     align-items: center;
-    padding:0px 15px 0px 15px;
+    flex-basis: 0px;
+    padding: 5px 10px 5px 10px;
+    cursor:pointer;
+    transition-duration:0.3s;
+    border-radius: 60px;
+    &:hover {
+      background-color: $intake-bg-color;
+    }
   }
   &__cell {
     width:20%;
+    display: flex;
     flex-basis: 18px;
     flex-shrink:0;
+    flex-grow: 0;
     margin:0px 10px 3px 10px;
     padding: 5px;
-    display: flex;
+    border-radius:50px;
     justify-content: center;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $intake-bg-color;
+    }
     &_past {
       color: #4A395D;
     }
     &_current {
-      background-color: $intake-bg-color;
-      border-radius:50px;
+      background-color: $text-color-light;
+      color: white;
       font-weight:900;
+      &:hover {
+        background-color: $text-color-light;
+      }
     }
   }
   &__tiles-container {
@@ -54,5 +72,6 @@ $font-info: Regular 18pt Muli;
     flex-wrap:wrap;
     justify-content: center;
     height:217px;
+    align-items: flex-start;
   }
 }

@@ -64,7 +64,7 @@
     {
       "title": "Milk",
       "intakeID": 1,
-      "weight": 100,
+      "weight": 102,
       "calories": 53,
       "carbs": 5,
       "prots": 3,
@@ -85,7 +85,7 @@
     },
     {
       "id": 2,
-      "title": "Milk",
+      "title": "Oats",
       "weight": 100,
       "calories": 53,
       "carbs": 5,
@@ -103,6 +103,60 @@
     },
     {
       "id": 4,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 5,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 6,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 7,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 8,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 9,
+      "title": "Milk",
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3
+    },
+    {
+      "id": 10,
       "title": "Milk",
       "weight": 100,
       "calories": 53,

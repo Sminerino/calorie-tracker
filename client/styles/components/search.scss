@@ -38,16 +38,20 @@ $font-info: Regular 18pt Muli;
     font: $font-info;
     color: $text-color-dark;
     flex-direction: column;
+    overflow: auto;
   }
   &__done-button-container {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
+    flex-shrink:0;
   }
   &__done-button {
     padding: 5px 10px 5px 18px;
     background-color: $button-color;
     border-radius: 5px;
+    transition-duration:0.3s;
+
     &:hover {
       background-color: $border-color;
     }
@@ -62,6 +66,7 @@ $font-info: Regular 18pt Muli;
   margin: 2px;
   padding:8px;
   background-color: $intake-bg-color;
+  flex-shrink:0;
   &__calories-wrapper {
     display:flex;
   }

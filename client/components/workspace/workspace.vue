@@ -23,7 +23,7 @@
                                     <div class='food-tile' v-for='food in intake.food' :class=" { 'food-tile_last':intake.food[intake.food.length-1]===food } " >
                                           <div class='food-tile__title'>{{ food.title }}
                                           </div>
-                                          <div class='food-tile__remove-button' @click='removeFood(food)'>x</div>
+                                          <div class='food-tile__remove-button'><div class="food-tile__remove-button_inner" @click='removeFood(food)'>✖</div></div>
                                           <div class='food-tile__amount'>
                                                 <div class='food-tile__weight'>{{ food.weight }}
                                                 </div>

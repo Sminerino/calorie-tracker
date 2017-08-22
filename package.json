@@ -46,7 +46,8 @@
     "vue-flatpickr-component": "^3.0.0",
     "vue-router": "^2.0.0",
     "vuex": "^2.0.0",
-    "vuex-router-sync": "^4.0.0"
+    "vuex-router-sync": "^4.0.0",
+    "webpack-bundle-analyzer": "^2.9.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

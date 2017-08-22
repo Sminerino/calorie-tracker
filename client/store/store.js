@@ -106,7 +106,7 @@ const actions = {
     },
     findFood({commit}, value ) {
         if(value.length>0)
-        axios.get('http://localhost:3000/food?q='+value).
+        axios.get('http://localhost:3000/food?title_like='+value).
             then((res) => { commit('setCurrentSearch', res.data); });
     },
     addFood({commit}, {_intakeID, _addList } ) {
