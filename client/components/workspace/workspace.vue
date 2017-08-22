@@ -78,7 +78,6 @@
             mounted: function() {
                 //this.$store.dispatch('getUserIntakeList');
                 //this.$store.dispatch('getUserFoodList');
-                //we initalize process with calendar mount so no mount stuff needed
 
             },
             methods: {

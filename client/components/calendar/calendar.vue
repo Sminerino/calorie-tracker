@@ -33,11 +33,11 @@
                 return Math.ceil(this.getNumberOfDays/this.numberOfColumns);
             },
             getNumberOfDays: function() {
-                return new Date(this.currentDate.getFullYear(), this.currentDate.getMonth()+1, 0).getDate();
+                return new Date(this.currentDate.getFullYear(), this.currentMonth+1, 0).getDate();
             },
             getCurrentMonthName: function() {
                 const months=['January', 'February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                return months[this.currentDate.getMonth()];
+                return months[this.currentMonth];
             },
             getCurrentYear: function() {
                 return this.currentDate.getFullYear;
@@ -51,10 +51,11 @@
                 },
                 set: function(value) {
                     let date=this.currentDate;
+                    date.setDate(1);
                     date.setMonth(value);
+
                     this.currentDate = new Date(date);
                     this.createRowsColumnsArray();
-
                 }
             },
             currentDay: {
@@ -82,29 +83,39 @@
         methods: {
             createRowsColumnsArray: function() {
                 this.cells=[];
-                let dayNumber=1;
                 for(let i=0;i<this.getNumberOfDays;i++) {
-                    this.cells.push({value: dayNumber, index: i});
-                    dayNumber++;
+                    this.cells.push({value: i+1, index: i});
                 };
             },
             setCurrentDate: function(cell) {
                 this.cells.forEach((element)=>{element.current=false});
                 this.$set(cell,'current',true);
-                this.currentDay=cell.value;
                 this.cells.forEach((element, ...rest) => { if(element.index < cell.index)
                                                                 this.$set(element,'past',true)
                                                            else
                                                                 this.$set(element,'past',false) });
+                this.currentDay=cell.value;
                 this.$emit('dateChanged', this.currentDate);
             },
             setMonthBack: function() {
-                this.currentMonth=this.currentDate.getMonth()-1;
-                this.setCurrentDate(this.cells[this.cells.length-1]);
+                let realTime=new Date();
+                this.currentMonth=this.currentMonth-1;
+                if(this.currentDate.getMonth() != realTime.getMonth() || this.currentDate.getFullYear() != realTime.getFullYear() ) {
+                    this.setCurrentDate(this.cells[this.cells.length-1]);
+                }
+                else {
+                    this.setCurrentDate(this.cells[realTime.getDate()-1]);
+                }
             },
             setMonthForward: function() {
+                let realTime=new Date();
                 this.currentMonth=this.currentMonth+1;
-                this.setCurrentDate(this.cells[0]);
+                if(this.currentDate.getMonth() != realTime.getMonth() || this.currentDate.getFullYear()!=realTime.getFullYear() ) {
+                    this.setCurrentDate(this.cells[0]);
+                }
+                else {
+                    this.setCurrentDate(this.cells[realTime.getDate()-1]);
+                }
             }
 
         },
