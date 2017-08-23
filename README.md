@@ -28,5 +28,6 @@ $ npm run lint
 ```
 
 to be added:
-1. scrolling in search
-2. food data (may use an external api, but we'll see)
+
+1. food data (may use an external api, but we'll see)
+2. real server instead of json-server?
