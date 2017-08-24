@@ -8,11 +8,13 @@ let host;
 if (Config.hasOwnProperty('apiServer')) {
     host = `${Config.apiServer.host}:${Config.apiServer.port}`;
 } else {
-    host = '';
+    host = 'http://localhost:3000';
 }
 
 const state = {
-      userIntakeList: [], //id, title
+      userIntakeList: [
+
+      ], //id, title
       userFoodList: [], //id, title, calories, carbs, prots, fatgs, weight, intakeID
       currentSearch: [], //id, title, calories, carbs, prots, fats, weight
       currentDate: Date(),
