@@ -92,8 +92,8 @@
                   },
                   changeDate: function(date) {
                       this.$store.commit('changeDate', date);
-                     // this.$store.dispatch('getUserIntakeList');
-                      this.$store.dispatch('getUserFoodList');
+                      this.$store.dispatch('getUserIntakeList');
+                    //  this.$store.dispatch('getUserFoodList');
                   }
             },
             components: {

@@ -8,7 +8,7 @@ let host;
 if (Config.hasOwnProperty('apiServer')) {
     host = `${Config.apiServer.host}:${Config.apiServer.port}`;
 } else {
-    host = '';
+    host = 'http://localhost:3000';
 }
 
 const state = {
@@ -108,13 +108,11 @@ const actions = {
         axios.get( host+'/intake').
             then((res) => {
             commit('setUserIntakeList', res.data);
-            dispatch('getUserFoodList');
-        });
-    },
-    getUserFoodList( {commit} ) {
-        let date=new Date(state.currentDate);
-        axios.get(host+'/userFoods?date='+parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())).
+
+            let date=new Date(state.currentDate);
+            axios.get(host+'/userFoods?date='+parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())).
             then((res) => { commit('setUserFoodList', res.data); });
+        });
     },
     findFood({commit}, value ) {
         if(value.length>0)
