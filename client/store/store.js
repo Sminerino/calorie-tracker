@@ -8,7 +8,7 @@ let host;
 if (Config.hasOwnProperty('apiServer')) {
     host = `${Config.apiServer.host}:${Config.apiServer.port}`;
 } else {
-    host = 'http://localhost:3000';
+    host = '';
 }
 
 const state = {
