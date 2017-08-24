@@ -106,7 +106,10 @@ const mutations = {
 const actions = {
     getUserIntakeList( {commit} ) {
         axios.get( host+'/intake').
-            then((res) => { commit('setUserIntakeList', res.data); });
+            then((res) => {
+            commit('setUserIntakeList', res.data);
+            dispatch('getUserFoodList');
+        });
     },
     getUserFoodList( {commit} ) {
         let date=new Date(state.currentDate);
