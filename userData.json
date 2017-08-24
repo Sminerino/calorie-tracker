@@ -71,6 +71,17 @@
       "fats": 3,
       "date": 2282017,
       "id": 18
+    },
+    {
+      "title": "Milk",
+      "intakeID": 1,
+      "weight": 100,
+      "calories": 53,
+      "carbs": 5,
+      "prots": 3,
+      "fats": 3,
+      "date": 2482017,
+      "id": 19
     }
   ],
   "food": [
