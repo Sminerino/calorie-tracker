@@ -65,7 +65,7 @@ const mutations = {
           let index=state.userIntakeList
           .findIndex(intake => intake.id == food.intakeID);
           state.userIntakeList[index].food.splice(state.userIntakeList[index].food.indexOf(food), 1);
-          axios.delete('http://localhost:3000/userFoods/'+food.id);
+          axios.delete( host+'/userFoods/'+food.id );
       },
       setCurrentSearch(state, foundFood) {
             state.currentSearch=[];
@@ -102,25 +102,25 @@ const mutations = {
       
 };
 const actions = {
-    getUserIntakeList( {commit} ) { //тут добавить в параметры нужный день
-        axios.get('http://localhost:3000/intake').
+    getUserIntakeList( {commit} ) {
+        axios.get( host+'/intake').
             then((res) => { commit('setUserIntakeList', res.data); });
     },
     getUserFoodList( {commit} ) {
         let date=new Date(state.currentDate);
-        axios.get('http://localhost:3000/userFoods?date='+parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())).
+        axios.get(host+'/userFoods?date='+parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())).
             then((res) => { commit('setUserFoodList', res.data); });
     },
     findFood({commit}, value ) {
         if(value.length>0)
-        axios.get('http://localhost:3000/food?title_like='+value).
+        axios.get(host+'/food?title_like='+value).
             then((res) => { commit('setCurrentSearch', res.data); });
     },
     addFood({commit}, {_intakeID, _addList } ) {
         commit('addFoodToList', {_intakeID, _addList});
         let date=new Date(state.currentDate);
         function axPostToFile(item) {
-            axios.post('http://localhost:3000/userFoods', {
+            axios.post(host+'/userFoods', {
                 title:item.title, intakeID:item.intakeID, weight:item.weight,
                 calories:item.calories, carbs:item.carbs, prots:item.prots,
                 fats:item.fats, date:parseInt(''+date.getDate()+(date.getMonth()+1)+date.getFullYear())
