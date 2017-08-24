@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Summer School 2017 Calorie tracker",
   "main": "client/index.js",
+  "enginges": {
+    "node":"6.11.2"
+  },
   "scripts": {
     "dev": "node build/server.js",
     "test": "testcafe all test/e2e/index.js --app \"npm run dev\" --app-init-delay 10000",
