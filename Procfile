@@ -1,0 +1,1 @@
+web: json-server --watch userData.json --port=$PORT --static=./dist

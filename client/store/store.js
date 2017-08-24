@@ -1,8 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import Config from './../../config.json';
 Vue.use(Vuex);
 
+let host;
+if (Config.hasOwnProperty('apiServer')) {
+    host = `${Config.apiServer.host}:${Config.apiServer.port}`;
+} else {
+    host = '';
+}
 
 const state = {
       userIntakeList: [], //id, title

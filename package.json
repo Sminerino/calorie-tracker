@@ -7,7 +7,7 @@
     "dev": "node build/server.js",
     "test": "testcafe all test/e2e/index.js --app \"npm run dev\" --app-init-delay 10000",
     "build": "webpack --config build/webpack.prod.js",
-    "start": "npm run build",
+    "start": "npm run build && json-server --watch userData.json --static=./dist",
     "heroku-postbuild": "webpack --config build/webpack.prod.js",
     "lint": "xo **/client/**/*.{vue,js} !node_modules/**"
 
