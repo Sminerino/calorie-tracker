@@ -1,3 +1,4 @@
+demo: https://calorie-tracker-smn.herokuapp.com/ 
 To start:
 
 ```bash
