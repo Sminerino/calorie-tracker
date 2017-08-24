@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "node build/server.js",
     "test": "testcafe all test/e2e/index.js --app \"npm run dev\" --app-init-delay 10000",
-    "build": "webpack --config build/webpack.prod.js",
-    "start": "node build/server.js",
+    "build": "node_modules/webpack/bin/webpack.js --config build/webpack.prod.js",
+    "start": "npm run build",
+    "heroku-postbuild": "webpack --config build/webpack.prod.js",
     "lint": "xo **/client/**/*.{vue,js} !node_modules/**"
   },
   "author": "sminerino",
@@ -44,7 +45,6 @@
     "babel-runtime": "^6.18.0",
     "promise-polyfill": "^6.0.2",
     "vue": "^2.2.0",
-    "vue-flatpickr-component": "^3.0.0",
     "vue-router": "^2.0.0",
     "vuex": "^2.0.0",
     "vuex-router-sync": "^4.0.0"
